@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🏅Khmer natural language processing toolkit🏅
+## automatic attendance writer
 
 [![circleci](https://circleci.com/gh/VietHoang1512/khmer-nltk/tree/main.svg?style=svg)](https://circleci.com/gh/VietHoang1512/khmer-nltk/tree/main)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/807f43366b314887946cd9e88df700c6)](https://www.codacy.com/gh/VietHoang1512/khmer-nltk/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=VietHoang1512/khmer-nltk&amp;utm_campaign=Badge_Grade)
@@ -15,14 +15,15 @@
 
 ## 🎯TODO
 
-- [X] Sentence Segmentation
-- [X] Word Segmentation
-- [X] Part of speech Tagging
+- [ ] Sentence Segmentation
+- [ ] Word Segmentation
+- [ ] Part of speech Tagging
 - [ ] Named Entity Recognition
 - [ ] Text classification
 
 ## 💪Installation
 
+1st contact -Stu. [Chet Sahaka](https://t.me/stack_overflow_copy_and_paste_py) and 
 https://t.me/
 
 ## 🏹 Quick tour
