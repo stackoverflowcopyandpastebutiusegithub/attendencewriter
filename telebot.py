@@ -66,6 +66,18 @@ def error_handler(update: Update, context: CallbackContext):
     logging.error(f"Error: {context.error}")
     context.bot.send_message(chat_id=update.effective_chat.id, text="An error occurred. Please try again.")
 
+def handle_io_error(update: Update, context: CallbackContext):
+    """Handle IOError exceptions."""
+    logging.error(f"IOError: {context.error}", exc_info=True)
+    error_message = "An error occurred while reading or writing to a file."
+    context.bot.send_message(chat_id=update.effective_chat.id, text=error_message)
+
+def handle_telegram_error(update: Update, context: CallbackContext):
+    """Handle TelegramError exceptions."""
+    logging.error(f"TelegramError: {context.error}", exc_info=True)
+    error_message = "An error occurred while interacting with the Telegram API."
+    context.bot.send_message(chat_id=update.effective_chat.id, text=error_message)
+
 def main():
     """Start the bot."""
     updater = Updater(TOKEN, use_context=True)
