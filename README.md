@@ -21,9 +21,9 @@ if you do not want to contact him then refer to [README2.md](README2.md) to inst
 
 ## 🏹 Quick tour
 
-[[Blog]](not added yet)
+Blog (not added yet)
 
-To get the evaluation result of khmer-nltk's functionalities, please refer the sub-modules's readme
+To get the evaluation result of Attendance writer's functionalities, please refer the sub-modules's readme
 
 ## Main features
 
