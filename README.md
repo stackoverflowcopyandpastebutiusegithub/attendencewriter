@@ -38,7 +38,7 @@ Blog (not added yet)
 
 # Used in:
 
-class 8D (604)
+project is not complete
 
 <div align="left">
 
