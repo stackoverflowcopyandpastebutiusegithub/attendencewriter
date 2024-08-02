@@ -13,29 +13,30 @@
 
 first create a google account if you haven't already
 
-## 1.6th Step
+## 1.2th Step
 
 sign in to [google cloud](https://console.cloud.google.com/apis/credentials?_ga=2.141441269.633874558.1722564956-2000324897.1722564956)
 
-## 1.1th step
+## 1.3th step
 
 In the Google Cloud console, go to the Credentials page:
 
-## 1.2th Step
+## 1.4th Step
 
 Click Create credentials, then select Service Accounts from the menu.
 Create a Service Accounts.
 
-## 1.3th Step
+## 1.5th Step
 
 on the main page click the service account email that you want to use and select the Keys tab
 
-## 1.4th Step
+## 1.6th Step
 
 scroll down to the bottem and click add new key
 
-## 1.5th Step
+## 1.7th Step
 
 select Json and click create. it will download it.
 
 # Second step
+
