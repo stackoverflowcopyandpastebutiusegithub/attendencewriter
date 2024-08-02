@@ -34,8 +34,6 @@ if you do not want to contact him then refer to [README2.md](README2.md) to inst
 
 Blog (not added yet)
 
-To get the evaluation result of Attendance writer's functionalities, please refer the sub-modules's readme
-
 <div align="center">
 
 # Used in:
