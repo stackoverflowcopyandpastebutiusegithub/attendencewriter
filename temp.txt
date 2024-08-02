@@ -1,0 +1,61 @@
+import json
+
+def generate_json(names):
+    requests = []
+    values = ['✔', 'P', 'A']
+    for name in names:
+        request = {
+            "updateCells": {
+                "range": {
+                    "sheetId": 0,
+                    "startRowIndex": 0,
+                    "endRowIndex": 1000,
+                    "startColumnIndex": 0,
+                    "endColumnIndex": 1
+                },
+                "rows": [
+                    {
+                        "values": [
+                            {
+                                "dataValidation": {
+                                    "condition": {
+                                        "type": "ONE_OF_LIST",
+                                        "values": [
+                                            {
+                                                "userEnteredValue": '✔'
+                                            },
+                                            {
+                                                "userEnteredValue": 'P'
+                                            },
+                                            {
+                                                "userEnteredValue": 'A'
+                                            }
+                                        ]
+                                    },
+                                    "showCustomUi": True
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "fields": "dataValidation"
+            },
+            "rangeMatcher": {
+                "rangeMatchCriteria": "VALUE_IN_RANGE",
+                "valueRange": {
+                    "values": [
+                        [
+                            name
+                        ]
+                    ]
+                }
+            }
+        }
+        requests.append(request)
+    data = {"requests": requests}
+    return json.dumps(data, indent=4)
+
+names = ["Jackson", "John", "Jane", "Bob"]
+
+with open("output.json", "w") as f:
+    f.write(generate_json(names))
