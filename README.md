@@ -2,6 +2,8 @@
 
 ## Automatic Attendance Writer
 
+<div align="left">
+
 ## 🎯TODO
 
 - [ ] Telegram bot
@@ -19,12 +21,6 @@ if you do not want to contact him then refer to [README2.md](README2.md) to inst
 
 <div align="left">
 
-## 🏹 Quick tour
-
-Blog (not added yet)
-
-To get the evaluation result of Attendance writer's functionalities, please refer the sub-modules's readme
-
 ## Main features
 
  - Telegram bot
@@ -32,6 +28,13 @@ To get the evaluation result of Attendance writer's functionalities, please refe
  - Keeping logs for furtre review
  - hash and comparing with all possibilities
  - using json file to add new name data (on hold)
+ - Adding new name data throught telegram bot
+
+## 🏹 Quick tour
+
+Blog (not added yet)
+
+To get the evaluation result of Attendance writer's functionalities, please refer the sub-modules's readme
 
 <div align="center">
 
