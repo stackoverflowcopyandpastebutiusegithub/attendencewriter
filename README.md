@@ -45,5 +45,3 @@ project is not complete
 ### 📜 Advisor
 
 -Stu. [Chet Sahaka](https://t.me/stack_overflow_copy_and_paste_py)
-
-[def]: README2.md
