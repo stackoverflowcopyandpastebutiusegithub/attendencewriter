@@ -2,9 +2,11 @@ import json
 import schedule
 import time
 import os
+from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
 
 # Constants
-SHEET_ID = "your_sheet_id_here"  # Replace with your actual sheet ID
+SPREADSHEET_ID = "your_spreadsheet_id_here"  # Replace with your actual spreadsheet ID
 START_ROW_INDEX = 0
 END_ROW_INDEX = 1000
 START_COLUMN_INDEX = 0
@@ -14,49 +16,58 @@ def generate_json(names: list[str]) -> str:
     """Generate JSON data based on the list of names"""
     requests = []
     values = load_values_from_file("nametemp.txt")  # Load values from file
-    for name in names:
-        request = {
-            "updateCells": {
-                "range": {
-                    "sheetId": SHEET_ID,
-                    "startRowIndex": START_ROW_INDEX,
-                    "endRowIndex": END_ROW_INDEX,
-                    "startColumnIndex": START_COLUMN_INDEX,
-                    "endColumnIndex": END_COLUMN_INDEX
-                },
-                "rows": [
-                    {
-                        "values": [
-                            {
-                                "dataValidation": {
-                                    "condition": {
-                                        "type": "ONE_OF_LIST",
-                                        "values": [
-                                            {"userEnteredValue": value} for value in values
-                                        ]
-                                    },
-                                    "showCustomUi": True
+    sheet_ids = get_sheet_ids(SPREADSHEET_ID)  # Get sheet IDs from Google Sheets API
+    for sheet_id in sheet_ids:
+        for name in names:
+            request = {
+                "updateCells": {
+                    "range": {
+                        "sheetId": sheet_id,
+                        "startRowIndex": START_ROW_INDEX,
+                        "endRowIndex": END_ROW_INDEX,
+                        "startColumnIndex": START_COLUMN_INDEX,
+                        "endColumnIndex": END_COLUMN_INDEX
+                    },
+                    "rows": [
+                        {
+                            "values": [
+                                {
+                                    "dataValidation": {
+                                        "condition": {
+                                            "type": "ONE_OF_LIST",
+                                            "values": [
+                                                {"userEnteredValue": value} for value in values
+                                            ]
+                                        },
+                                        "showCustomUi": True
+                                    }
                                 }
-                            }
+                            ]
+                        }
+                    ],
+                    "fields": "dataValidation"
+                },
+                "rangeMatcher": {
+                    "rangeMatchCriteria": "VALUE_IN_RANGE",
+                    "valueRange": {
+                        "values": [
+                            [
+                                name
+                            ]
                         ]
                     }
-                ],
-                "fields": "dataValidation"
-            },
-            "rangeMatcher": {
-                "rangeMatchCriteria": "VALUE_IN_RANGE",
-                "valueRange": {
-                    "values": [
-                        [
-                            name
-                        ]
-                    ]
                 }
             }
-        }
-        requests.append(request)
+            requests.append(request)
     data = {"requests": requests}
     return json.dumps(data, indent=4)
+
+def get_sheet_ids(spreadsheet_id: str) -> list[str]:
+    """Get sheet IDs from Google Sheets API"""
+    service = build('sheets', 'v4')
+    spreadsheet = service.spreadsheets().get(spreadsheetId=spreadsheet_id).execute()
+    sheet_ids = [sheet['id'] for sheet in spreadsheet['sheets']]
+    return sheet_ids
 
 def load_names_from_file(file_path: str) -> list[str]:
     """Load names from a text file"""
