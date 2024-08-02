@@ -7,7 +7,7 @@
 ## 🎯TODO
 
 - [ ] Telegram bot
-- [ ] Writing into google sheets
+- [X] Writing into google sheets
 - [ ] hashing and comparing
 - [ ] adding new naming data
 - [ ] use google drive to run code on cloud
