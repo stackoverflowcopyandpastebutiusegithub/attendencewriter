@@ -27,11 +27,11 @@ To get the evaluation result of khmer-nltk's functionalities, please refer the s
 
 ### Main features
 
-# - Telegram bot
-# - Ease of use
-# - Keeping logs for furtre review
-# - hash and comparing with all possibilities
-# - using json file to add new name data (on hold)
+ - Telegram bot
+ - Ease of use
+ - Keeping logs for furtre review
+ - hash and comparing with all possibilities
+ - using json file to add new name data (on hold)
 
 <div align="center">
 
