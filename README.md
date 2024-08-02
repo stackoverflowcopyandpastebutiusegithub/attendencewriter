@@ -1,6 +1,6 @@
 <div align="center">
 
-## automatic attendance writer
+### Automatic Attendance Writer
 
 </div>
 
@@ -12,10 +12,12 @@
 - [ ] adding new naming data
 - [ ] use google drive to run code on cloud
 
-## 💪Installation
+<div align="center">
+
+## Installation
 
 1st contact -Stu. [Chet Sahaka](https://t.me/stack_overflow_copy_and_paste_py) and he'll take it from there
-if you do not want to contact him then refer to [README2.md](README2.md)
+if you do not want to contact him then refer to [README2.md](README2.md) to install it and run it youself
 
 ## 🏹 Quick tour
 
@@ -23,21 +25,15 @@ if you do not want to contact him then refer to [README2.md](README2.md)
 
 To get the evaluation result of khmer-nltk's functionalities, please refer the sub-modules's readme
 
-### Sending valuable into
+### Main features
 
+# - Telegram bot
+# - Ease of use
+# - Keeping logs for furtre review
+# - hash and comparing with all possibilities
+# - using json file to add new name data (on hold)
 
-### [Writing into google sheets](khmernltk/word_tokenize)
-
-
-
-### [keeping logs](khmernltk/pos_tag)
-
-### Usage
-
-
-
-### [adding students](khmernltk/word_tokenize)
-
+<div align="center">
 
 #### Used in:
 
@@ -46,3 +42,5 @@ class 8D (604)
 ### 📜 Advisor
 
 -Stu. [Chet Sahaka](https://t.me/stack_overflow_copy_and_paste_py)
+
+[def]: README2.md
