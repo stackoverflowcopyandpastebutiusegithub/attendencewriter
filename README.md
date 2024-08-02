@@ -1,8 +1,6 @@
 <div align="center">
 
-### Automatic Attendance Writer
-
-</div>
+## Automatic Attendance Writer
 
 ## 🎯TODO
 
@@ -19,13 +17,15 @@
 1st contact -Stu. [Chet Sahaka](https://t.me/stack_overflow_copy_and_paste_py) and he'll take it from there
 if you do not want to contact him then refer to [README2.md](README2.md) to install it and run it youself
 
+<div align="left">
+
 ## 🏹 Quick tour
 
-[[Blog]](https://towardsdatascience.com/khmer-natural-language-processing-in-python-c770afb84784)
+[[Blog]](not added yet)
 
 To get the evaluation result of khmer-nltk's functionalities, please refer the sub-modules's readme
 
-### Main features
+## Main features
 
  - Telegram bot
  - Ease of use
@@ -35,9 +35,11 @@ To get the evaluation result of khmer-nltk's functionalities, please refer the s
 
 <div align="center">
 
-#### Used in:
+# Used in:
 
 class 8D (604)
+
+<div align="left">
 
 ### 📜 Advisor
 
