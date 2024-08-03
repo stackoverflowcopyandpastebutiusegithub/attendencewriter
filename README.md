@@ -1,6 +1,7 @@
 <div align="center">
 
 # Automatic Attendance Writer
+=====================================
 
 <div align="left">
 
