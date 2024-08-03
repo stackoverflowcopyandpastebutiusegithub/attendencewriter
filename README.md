@@ -1,7 +1,8 @@
 <div align="center">
 
 # Automatic Attendance Writer
-=====================================
+## made for ease of attendance write-up
+### =====================================
 
 <div align="left">
 
