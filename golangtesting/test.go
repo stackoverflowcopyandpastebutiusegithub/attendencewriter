@@ -2,7 +2,7 @@ package main
 
 import (
 	"crypto/sha256"
-	"encoding/csv"
+	"encoding/json"
 	"fmt"
 	"io"
 	"log"
@@ -18,7 +18,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// Set the directory path where the CSV files are located
+	// Set the directory path where the JSON files are located
 	dirPath := wd
 
 	// Set the output directory path for the hashed files
@@ -28,9 +28,9 @@ func main() {
 	now := time.Now()
 
 	// Format the date and time according to the naming convention
-	fileName := fmt.Sprintf("%s%d%d%d.csv", now.Weekday().String(), now.Day(), now.Month(), now.Year()%100)
+	fileName := fmt.Sprintf("%s%d%d%d.json", now.Weekday().String(), now.Day(), now.Month(), now.Year()%100)
 
-	// Open the CSV file
+	// Open the JSON file
 	file, err := os.Open(filepath.Join(dirPath, fileName))
 	if err != nil {
 		log.Fatal(err)
@@ -40,7 +40,7 @@ func main() {
 	// Create a new SHA-256 hash
 	hash := sha256.New()
 
-	// Read the CSV file and hash its contents
+	// Read the JSON file and hash its contents
 	_, err = io.Copy(hash, file)
 	if err != nil {
 		log.Fatal(err)
@@ -63,4 +63,4 @@ func main() {
 	}
 
 	log.Printf("Hashed file %s and saved to %s\n", fileName, outputFile.Name())
-}th
+}
