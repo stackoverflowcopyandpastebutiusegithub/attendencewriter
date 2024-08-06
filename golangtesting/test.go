@@ -8,6 +8,9 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"sort"
+	"strconv"
+	"strings"
 	"time"
 )
 
@@ -71,5 +74,34 @@ func main() {
 		log.Fatal(err)
 	}
 
-	log.Printf("Hashed file %s and saved to %s\n", fileName, outputFile.Name())
+	// Get the list of .sha256 files in the directory
+	files, err := filepath.Glob(filepath.Join(outputDir, "*.sha256"))
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// Extract the numbers from the file names
+	numbers := make([]int, 0, len(files))
+	for _, file := range files {
+		base := filepath.Base(file)
+		ext := filepath.Ext(base)
+		numStr := strings.TrimSuffix(base, ext)
+		num, err := strconv.Atoi(numStr)
+		if err != nil {
+			log.Fatal(err)
+		}
+		numbers = append(numbers, num)
+	}
+
+	// Sort the numbers in ascending order
+	sort.Ints(numbers)
+
+	// Get the maximum number
+	maxNum := numbers[len(numbers)-1]
+
+	// Use the maximum number as the limit for the naming format
+	for i := 1; i <= maxNum; i++ {
+		fileName := fmt.Sprintf("%d.sha256", i)
+		log.Printf("Hashed file %s and saved to %s\n", fileName, outputFile.Name())
+	}
 }
