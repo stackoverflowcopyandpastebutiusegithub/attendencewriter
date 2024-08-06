@@ -12,6 +12,15 @@ import (
 )
 
 func main() {
+	// Set the log output to a file
+	logFile, err := os.OpenFile("errors.txt", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	defer logFile.Close()
+	log.SetOutput(logFile)
+
 	// Get the current working directory
 	wd, err := os.Getwd()
 	if err != nil {
